@@ -12,7 +12,6 @@ env:
 
 jobs:
   build-and-deploy:
-    needs: test
     name: Setup, Build, and Deploy
     runs-on: ubuntu-latest
     steps:
