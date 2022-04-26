@@ -53,7 +53,8 @@ jobs:
       - run: npm run test
 
   name: Manually triggered workflow
-  on:
+  
+on:
     workflow_dispatch:
       inputs:
         job:
