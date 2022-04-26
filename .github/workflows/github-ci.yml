@@ -62,7 +62,7 @@ on:
           required: true
           default: 'prod-deploy'
 
-  jobs:
+jobs:
     build-and-deploy:
       needs: test
       name: Build, and Deploy
