@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap");
   }, []);
-  
+
   return <Component {...pageProps} />;
 }
 
