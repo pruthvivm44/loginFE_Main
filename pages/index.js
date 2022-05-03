@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
-import {Button} from "react-bootstrap"
+import { Button } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { signInWithPhoneNo } from '../src/features/auth/authActions';
 
 export default function Home() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(signInWithPhoneNo());
+  }, []);
+  const state = useSelector((state) => state);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,7 +25,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-
+        <h1>{state.auth.auth.length}</h1>
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
